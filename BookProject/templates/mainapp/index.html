@@ -18,7 +18,12 @@
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">홈으로</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!" onClick="location.href='./things.html'">물건 등록하기</a></li>
+                    {% if user.is_authenticated %}
                     <li class="nav-item"><a class="nav-link" href="#!" onClick="location.href='./login.html'">마이페이지</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'accounts:logout' %}" >로그아웃</a></li>
+                    {% else %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'accounts:login' %}" >로그인</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </div>

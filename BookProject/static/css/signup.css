@@ -1,10 +1,7 @@
-html{
-    /* 그라데이션 배경색 */
-}
 
 #login{
     width:400px;
-    height:400px;
+    height:440px;
     border-radius: 10px;
     border:2px solid grey;
 
@@ -63,7 +60,7 @@ html{
     height:50px;
     background-color: rgb(206, 206, 206);
     border:0px;
-    margin-top:40px;
+    margin-top:80px;
 }
 
 /*버튼에 커서 갖다대었을 시*/

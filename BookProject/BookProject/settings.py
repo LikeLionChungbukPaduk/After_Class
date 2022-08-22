@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mainapp',
+    'accounts',
+    
 ]
 
 MIDDLEWARE = [
@@ -99,7 +101,9 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
+# AUTHENTICATION_BACKENDS = (
+#     ('django.contrib.auth.backends.ModelBackend'),
+# )
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
@@ -111,7 +115,7 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
+LOGIN_REDIRECT_URL = '/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
