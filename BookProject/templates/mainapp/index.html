@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container px-5">
+            <a class="navbar-brand" href="./index.html">대학 중고거래 사이트</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">홈으로</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!" onClick="location.href='./things.html'">물건 등록하기</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!" onClick="location.href='./login.html'">마이페이지</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="submit">
+        <form id="submit_img">
+            <img id="preview">
+            <input type="file" onchange="readURL(this);">
+        </form>
+        
+        <form id="submit_content">
+            <div>
+                <input id="book_name" type="text" placeholder="책 제목">
+                <input id="writer" type="text" placeholder="저자">
+            </div>
+            <div>
+                <input id="sell_price" type="text" placeholder="판매가">
+                <input id="original_price" type="text" placeholder="원가">
+            </div>
+        </form>
+    </div>
+
+    <button id="btn">제출</button>
+
+    <div id="sell">
+        <div id="sell_box">
+            <div class="card">
+                <img src="https://kuku-keke.com/wp-content/uploads/2020/05/2695_3.png" class="card-img-top" alt="물건">
+                <div class="card-body">
+                    <p>책 제목</p>
+                    <p>저자</p>
+                    <div class="price">
+                        <span>가격</span>
+                        <span> / </span>
+                        <span>원가</span>
+                    </div>
+                    <div>물건 판매자</div>
+                    <div>물건 등록일</div>
+                    <button class="btn btn-primary">등록</button>
+                </div>
+            </div>
+        </div>
+    
+       
+        <div id="sell_box">
+            <div class="card" style="width: 300px;">
+                <img src="https://kuku-keke.com/wp-content/uploads/2020/05/2695_3.png" class="card-img-top" alt="물건">
+                <div class="card-body">
+                    <p>책 제목</p>
+                    <p>저자</p>
+                    <div class="price">
+                        <span>가격</span>
+                        <span> / </span>
+                        <span>원가</span>
+                    </div>
+                    <div>물건 판매자</div>
+                    <div>물건 등록일</div>
+                    <button class="btn btn-primary">등록</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- 판매할 물건 보여주는 박스 -->
+    <!-- <div class="sell_box">
+        <img src="https://kuku-keke.com/wp-content/uploads/2020/05/2695_3.png" alt="물건">
+        <p>책 제목</p>
+        <p>저자</p>
+        <div class="price">
+            <span>가격</span>
+            <span> / </span>
+            <span>원가</span>
+        </div>
+        <div>물건 판매자</div>
+        <div>물건 등록일</div>
+    </div> -->
+<!-- 
+    <form action="insertAf.jsp">
+        <img id="preview">
+        <input type="file" onchange="readURL(this);">
+        <div>
+            <input type="text" placeholder="책 제목">
+            <input type="text" placeholder="저자">
+        </div>
+    </form> -->
+
+    <script src="{% static 'js/index.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
