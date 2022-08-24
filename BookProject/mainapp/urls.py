@@ -7,3 +7,5 @@ urlpatterns = [
     path('posts',posts,name='posts'),
     path('posts/<int:pk>',posting, name="posting"),
 ]
+
+
