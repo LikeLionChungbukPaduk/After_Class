@@ -9,7 +9,7 @@
 #sell_box{
     margin-top:10px;
     display:inline-block;
-    float: left; 
+    /* float: left;  */
     /* 이미지 옆에 나란히 div 두려면 해야함 (근데 이미지 태그에다가 하지 말고 이미지 태그 감싸고 있는 애한테 해) */
 }
 

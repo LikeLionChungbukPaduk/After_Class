@@ -29,7 +29,7 @@
         </div>
     </nav>
 
-    <div id="submit">
+    <!-- <div id="submit">
         <form id="submit_img">
             <img id="preview">
             <input type="file" onchange="readURL(this);">
@@ -45,12 +45,12 @@
                 <input id="original_price" type="text" placeholder="원가">
             </div>
         </form>
-    </div>
+    </div> -->
 
-    <button id="btn">제출</button>
+    <!-- <button id="btn">제출</button> -->
 
     <div id="sell">
-        <div id="sell_box">
+        <!-- <div id="sell_box">
             <div class="card">
                 <img src="https://kuku-keke.com/wp-content/uploads/2020/05/2695_3.png" class="card-img-top" alt="물건">
                 <div class="card-body">
@@ -85,25 +85,28 @@
                     <button class="btn btn-primary">등록</button>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div id="sell_box">
             <div class="card" style="width: 300px;">
                 {% for post in postlist %}
                 <!-- 게시물 페이지로 이동 -->
                 <a href="{{post.pk}}/"></a>
-                    <img src="https://kuku-keke.com/wp-content/uploads/2020/05/2695_3.png" class="card-img-top" alt="물건">
+                    <!-- photo_set photo를 통해 post를 역참조-->
+                    {% for photo in post.photo_set.all %}
+                    <img src="{photo.image.url}" class="card-img-top" alt="물건">
+                    {% endfor %}
                 <div class="card-body">
                     <p>{{post.title}}</p>
                     <p>{{post.author}}</p>
                     <div class="price">
                         <span>{{post.price}}</span>
                         <span> / </span>
-                        <span>{{post.original_price}}</span>
+                        <span>{{post.origin_price}}</span>
                     </div>
                     <div>{{post.seller}}</div>
                     <div>{{post.sell_date}}</div>
                     {% endfor %}
-                    <button class="btn btn-primary">등록</button>
+                    <!-- <button class="btn btn-primary">등록</button> -->
                 </div>
             </div>
         </div>
