@@ -9,9 +9,7 @@ class Post(models.Model):
     # seller : Post 1 : N 관계 하나의 유저가 여러개의 포스트를 작성 가능
     seller=models.ForeignKey(User, on_delete=models.CASCADE, null=False)
     sell_date=models.DateTimeField(auto_now_add=True)
-    content=models.TextField(max_length=100,default='')
+    content=models.TextField(max_length=100,null=True, blank=True)
+    image=models.ImageField(upload_to='images/',blank=True, null=True)
     def __str__(self):
         return '[{}] {}'.format(self.id, self.title)
-class Photo(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, null=True)
-    image = models.ImageField(upload_to='images/', blank=True, null=True)

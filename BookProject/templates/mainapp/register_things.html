@@ -24,7 +24,7 @@
         </div>
     </nav>
 
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div id="submit">
             <!-- <div id="submit_img">
@@ -32,12 +32,13 @@
                 <input type="file" onchange="readURL(this);">
             </div> -->
             <div id="submit_content">
-                <input id="book_name" type="text" placeholder="책 제목" name="title"><br>
+                <!-- <input id="book_name" type="text" placeholder="책 제목" name="title"><br>
                 <input id="writer" type="text" placeholder="저자" name="author"> <br>
                 <input id="sell_price" type="text" placeholder="판매가" name="price"> <br>
                 <input id="original_price" type="text" placeholder="원가" name="origin_price"> <br>
                 <textarea id="contents" rows="10" cols="50" name="contents" placeholder="내용" name="content"></textarea><br>
-                <input type="file" name="image" multiple>
+                <input type="file" name="image" multiple> -->
+                {{form.as_p}}
                 <div id="button">
                     <input type="submit" id="book_submit" value="책 등록">  
                 </div>

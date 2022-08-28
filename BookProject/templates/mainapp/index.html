@@ -90,11 +90,9 @@
             <div class="card" style="width: 300px;">
                 {% for post in postlist %}
                 <!-- 게시물 페이지로 이동 -->
-                <a href="{{post.pk}}/"></a>
-                    <!-- photo_set photo를 통해 post를 역참조-->
-                    {% for photo in post.photo_set.all %}
-                    <img src="{photo.image.url}" class="card-img-top" alt="물건">
-                    {% endfor %}
+                {% if post.image %}
+                <img src="{post.image_url" alt="">
+                {% endif %}
                 <div class="card-body">
                     <p>{{post.title}}</p>
                     <p>{{post.author}}</p>
@@ -105,7 +103,7 @@
                     </div>
                     <div>{{post.seller}}</div>
                     <div>{{post.sell_date}}</div>
-                    {% endfor %}
+                {% endfor %}
                     <!-- <button class="btn btn-primary">등록</button> -->
                 </div>
             </div>
