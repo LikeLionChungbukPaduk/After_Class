@@ -14,7 +14,3 @@ class Post(models.Model):
     image = models.ImageField(upload_to='images/', blank=True, null=True)
     def __str__(self):
         return '[{}] {}'.format(self.id, self.title)
-# class Photo(models.Model):
-#     # post 하나에 여러개의 photo가 들어있을 수 있음 one to many관계 -> foreignkey관계
-#     post = models.ForeignKey(Post, on_delete=models.CASCADE, null=True)
-#     image = models.ImageField(upload_to='images/', blank=True, null=True)
