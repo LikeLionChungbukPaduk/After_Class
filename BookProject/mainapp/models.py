@@ -1,6 +1,8 @@
+import imp
+from re import I
 from django.db import models
 from django.contrib.auth.models import User
-
+from django_resized import ResizedImageField
 # Create your models here.
 class Post(models.Model):
     title=models.CharField(max_length=20,default='')
@@ -11,6 +13,6 @@ class Post(models.Model):
     seller=models.ForeignKey(User, on_delete=models.CASCADE, null=False)
     sell_date=models.DateTimeField(auto_now_add=True)
     content=models.TextField(max_length=100,default=' ')
-    image = models.ImageField(upload_to='images/', blank=True, null=True)
+    image = ResizedImageField(size=[300,200],upload_to='images/', blank=True, null=True)
     def __str__(self):
         return '[{}] {}'.format(self.id, self.title)

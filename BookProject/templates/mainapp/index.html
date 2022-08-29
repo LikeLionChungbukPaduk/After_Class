@@ -35,10 +35,12 @@
                 {% for post in postlist %}
                 <!-- 게시물 페이지로 이동 -->
                 {% if post.image %}
-                <a href="{{post.pk}}/"></a>
-                    <img src="{{post.image.url}}" alt="" height="600">
+                <a href="{% url 'mainapp:posting' post.pk %}">
+                    <img src="{{post.image.url}}" alt="" height="300" width="300">
+                </a>
                 {% endif %}
                 <div class="card-body">
+                    {{post.pk}}
                     <p>{{post.title}}</p>
                     <p>{{post.author}}</p>
                     <div class="price">
@@ -49,7 +51,6 @@
                     <div>{{post.seller}}</div>
                     <div>{{post.sell_date}}</div>
                 {% endfor %}
-                    <!-- <button class="btn btn-primary">등록</button> -->
                 </div>
             </div>
         </div>
