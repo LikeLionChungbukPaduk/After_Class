@@ -8,6 +8,7 @@ urlpatterns = [
     path('',home,name='home'),
     path('posts',posts,name='posts'),
     path('post/<int:pk>',posting,name='posting'),
+    path('post/delete/<int:pk>',PostDelete,name='PostDelete'),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

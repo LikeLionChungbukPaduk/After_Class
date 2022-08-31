@@ -49,10 +49,14 @@
                         <span>{{post.origin_price}}</span>
                     </div>
                     <div>{{post.seller}}</div>
-                    <div>{{post.sell_date}}</div>
+                    <div>
+                        <span>{{ post.sell_date|time}}</span>
+                        <span><a onclick="alert('게시글이 삭제되었습니다.');" style="cursor:pointer" href="{% url 'mainapp:PostDelete' post.pk %}">게시물 삭제</a></span>
+                    </div>
+                    
                 {% endfor %}
                 </div>
-            </div>
+            </div>  
         </div>
     </div>
 

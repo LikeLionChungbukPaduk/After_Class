@@ -27,3 +27,8 @@ def posting(request, pk):
     post_detail = get_object_or_404(Post,pk=pk)
     # posting.html 페이지를 열 때, 찾아낸 게시글(post)을 post라는 이름으로 가져옴
     return render(request, 'mainapp/posting.html', {'post':post_detail})
+
+def PostDelete(requset,pk):
+    post=get_object_or_404(Post,pk=pk)
+    post.delete()
+    return redirect('mainapp:home')

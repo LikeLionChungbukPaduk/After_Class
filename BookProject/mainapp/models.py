@@ -15,4 +15,5 @@ class Post(models.Model):
     content=models.TextField(max_length=100,default=' ')
     image = ResizedImageField(size=[300,200],upload_to='images/', blank=True, null=True)
     def __str__(self):
+        ordering = ['-date',]
         return '[{}] {}'.format(self.id, self.title)
